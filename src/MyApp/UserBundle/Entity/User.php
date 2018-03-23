@@ -6,6 +6,7 @@
  * Time: 18:29
  */
 namespace MyApp\UserBundle\Entity;
+
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 /**
@@ -31,6 +32,21 @@ use Doctrine\ORM\Mapping as ORM;
      * @ORM\Column(type="string",length=255,nullable=true)
      */
     private $nationalite;
+    /**
+     * @ORM\Column(type="string",length=255,nullable=true)
+     */
+    private $role;
+    /**
+     * @ORM\Column(type="string",length=255,nullable=true)
+     */
+    private $telephone;
+    /**
+     * @ORM\Column(type="float",length=255,nullable=true)
+     */
+    private $argent;
+
+
+
 
 
 
@@ -38,6 +54,24 @@ use Doctrine\ORM\Mapping as ORM;
     {
         parent::__construct();
     }
+
+    /**
+     * @return mixed
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param mixed $role
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+    }
+
+
 
     /**
      * @return mixed
@@ -53,6 +87,22 @@ use Doctrine\ORM\Mapping as ORM;
     public function setNationalite($nationalite)
     {
         $this->nationalite = $nationalite;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     /**
@@ -89,4 +139,52 @@ use Doctrine\ORM\Mapping as ORM;
 
 
     // your own logic
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     *
+     * @return User
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * Set argent
+     *
+     * @param float $argent
+     *
+     * @return User
+     */
+    public function setArgent($argent)
+    {
+        $this->argent = $argent;
+
+        return $this;
+    }
+
+    /**
+     * Get argent
+     *
+     * @return float
+     */
+    public function getArgent()
+    {
+        return $this->argent;
+    }
 }

@@ -64,18 +64,7 @@
                                             <div class="kode_modal_body">
                                                 <a href="#"><i class="fa fa-user"></i></a>
                                                 <h2>member  login</h2>
-                                                <form>
-                                                    <div>
-                                                        {% block formualaire %}
-                                                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                                                            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                                                            <a href="{{ path('fos_user_security_logout') }}">
-                                                                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                                                            </a>
-                                                        {% else %}
-                                                            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                                                        {% endif %}
-                                                    </div>
+
 
                                                     {% if app.request.hasPreviousSession %}
                                                         {% for type, messages in app.session.flashbag.all() %}
@@ -90,11 +79,11 @@
                                                     <div>
                                                         {% block fos_user_content %}
                                                         {% endblock fos_user_content %}
-                                                        {%  endblock %}
+
                                                     </div>
 
 
-                                                </form>
+
                                             </div>
                                         </div>
                                     </div>
@@ -186,10 +175,10 @@
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="blog.html">Evenements</a>
                         <ul>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog2.html">blog 02 </a></li>
-                            <li><a href="blog-detail.html">blog detail</a></li>
-                            <li><a href="blog-sidebar.html">blog sidebar</a></li>
+                            <li><a href="blog.html">Consulter les évènements</a></li>
+                            <li><a href="blog2.html">Publier un évènement</a></li>
+                            <li><a href="blog-detail.html">Evaluations </a></li>
+                            <li><a href="blog-sidebar.html">Mes pubs</a></li>
                         </ul>
                     </li>
                     <li><a href="#">page</a>

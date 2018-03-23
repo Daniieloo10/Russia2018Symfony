@@ -2,4 +2,54 @@ evenement_homepage:
     path:     /index
     defaults: { _controller: EvenementBundle:Default:index }
 
+homepage1:
+    path:     /home1
+    defaults: { _controller: EvenementBundle:Event:redirHome }
+
+ajout_event:
+    path:     /publier
+    defaults: { _controller: EvenementBundle:Event:ajoutPub }
+
+list_event:
+    path:     /list
+    defaults: { _controller: EvenementBundle:Event:listEvents }
+
+list_Back:
+    path:     /list_back
+    defaults: { _controller: EvenementBundle:Event:listEventsBack}
+
+details_Back:
+    path:     /details_back/{id}
+    defaults: { _controller: EvenementBundle:Event:afficherDetailsBack}
+
+supp_Back:
+    path:     /supp_back/{id}
+    defaults: { _controller: EvenementBundle:Event:SupprimerEvent}
+
+modif_Back:
+    path:     /modif_back/{id}
+    defaults: { _controller: EvenementBundle:Event:modifBack}
+
+details_Event:
+    path:     /details_Event/{id}
+    defaults: { _controller: EvenementBundle:Event:detailsEvent}
+
+participer_Event:
+    path:     /participer_Event/{id}
+    defaults: { _controller: EvenementBundle:Event:participer}
+
+mesPubs_Event:
+    path:     /mes_Pubs
+    defaults: { _controller: EvenementBundle:Event:mesPubs}
+
+supp_Front:
+    path:     /supp_mesPub/{id}
+    defaults: { _controller: EvenementBundle:Event:supprimerFront}
+
+modif_Front:
+    path:     /modif_mesPub/{id}
+    defaults: { _controller: EvenementBundle:Event:modif}
+
+
+
 

@@ -8,7 +8,15 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('EvenementBundle:Default:index.html.twig');
+
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        return $this->render('EvenementBundle:Default:index.html.twig', array(
+            'user'=>$user,
+
+        ));
+
+
     }
 
 }
