@@ -19,6 +19,10 @@ class AppKernel extends Kernel
             new EvenementBundle\EvenementBundle(),
             new MyApp\UserBundle\UserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new blackknight467\StarRatingBundle\StarRatingBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -3,12 +3,13 @@
 namespace EvenementBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use MyApp\UserBundle\Entity\User;
 
 /**
  * Evaluation
  *
  * @ORM\Table(name="evaluation")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="EvenementBundle\Repository\EvaluationRepository")
  */
 class Evaluation
 {
@@ -57,7 +58,7 @@ class Evaluation
     private $noteevenement;
 
     /**
-     * @var \User
+     * @var User
      * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\User")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="iduser", referencedColumnName="id")
@@ -66,16 +67,19 @@ class Evaluation
     private $iduser;
 
     /**
-     * @var Evenement
-     * @ORM\ManyToOne(targetEntity="EvenementBundle\Entity\Evenement")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="iduser", referencedColumnName="idEvenement")
-     * })
+     * @var integer
+     *
+     * @ORM\Column(name="idevenement", type="integer", nullable=false)
      */
     private $idevenement;
 
+
+
+
     /**
-     * @return int
+     * Get evaluationid
+     *
+     * @return integer
      */
     public function getEvaluationid()
     {
@@ -83,14 +87,22 @@ class Evaluation
     }
 
     /**
-     * @param int $evaluationid
+     * Set emailparticipant
+     *
+     * @param string $emailparticipant
+     *
+     * @return Evaluation
      */
-    public function setEvaluationid($evaluationid)
+    public function setEmailparticipant($emailparticipant)
     {
-        $this->evaluationid = $evaluationid;
+        $this->emailparticipant = $emailparticipant;
+
+        return $this;
     }
 
     /**
+     * Get emailparticipant
+     *
      * @return string
      */
     public function getEmailparticipant()
@@ -99,14 +111,22 @@ class Evaluation
     }
 
     /**
-     * @param string $emailparticipant
+     * Set nomparticipant
+     *
+     * @param string $nomparticipant
+     *
+     * @return Evaluation
      */
-    public function setEmailparticipant($emailparticipant)
+    public function setNomparticipant($nomparticipant)
     {
-        $this->emailparticipant = $emailparticipant;
+        $this->nomparticipant = $nomparticipant;
+
+        return $this;
     }
 
     /**
+     * Get nomparticipant
+     *
      * @return string
      */
     public function getNomparticipant()
@@ -115,14 +135,22 @@ class Evaluation
     }
 
     /**
-     * @param string $nomparticipant
+     * Set nomevenement
+     *
+     * @param string $nomevenement
+     *
+     * @return Evaluation
      */
-    public function setNomparticipant($nomparticipant)
+    public function setNomevenement($nomevenement)
     {
-        $this->nomparticipant = $nomparticipant;
+        $this->nomevenement = $nomevenement;
+
+        return $this;
     }
 
     /**
+     * Get nomevenement
+     *
      * @return string
      */
     public function getNomevenement()
@@ -131,14 +159,22 @@ class Evaluation
     }
 
     /**
-     * @param string $nomevenement
+     * Set prenomparticipant
+     *
+     * @param string $prenomparticipant
+     *
+     * @return Evaluation
      */
-    public function setNomevenement($nomevenement)
+    public function setPrenomparticipant($prenomparticipant)
     {
-        $this->nomevenement = $nomevenement;
+        $this->prenomparticipant = $prenomparticipant;
+
+        return $this;
     }
 
     /**
+     * Get prenomparticipant
+     *
      * @return string
      */
     public function getPrenomparticipant()
@@ -147,14 +183,22 @@ class Evaluation
     }
 
     /**
-     * @param string $prenomparticipant
+     * Set noteevenement
+     *
+     * @param float $noteevenement
+     *
+     * @return Evaluation
      */
-    public function setPrenomparticipant($prenomparticipant)
+    public function setNoteevenement($noteevenement)
     {
-        $this->prenomparticipant = $prenomparticipant;
+        $this->noteevenement = $noteevenement;
+
+        return $this;
     }
 
     /**
+     * Get noteevenement
+     *
      * @return float
      */
     public function getNoteevenement()
@@ -163,15 +207,23 @@ class Evaluation
     }
 
     /**
-     * @param float $noteevenement
+     * Set iduser
+     *
+     * @param integer $iduser
+     *
+     * @return Evaluation
      */
-    public function setNoteevenement($noteevenement)
+    public function setIduser($iduser)
     {
-        $this->noteevenement = $noteevenement;
+        $this->iduser = $iduser;
+
+        return $this;
     }
 
     /**
-     * @return \User
+     * Get iduser
+     *
+     * @return integer
      */
     public function getIduser()
     {
@@ -179,29 +231,26 @@ class Evaluation
     }
 
     /**
-     * @param \User $iduser
+     * Set idevenement
+     *
+     * @param integer $idevenement
+     *
+     * @return Evaluation
      */
-    public function setIduser($iduser)
+    public function setIdevenement($idevenement)
     {
-        $this->iduser = $iduser;
+        $this->idevenement = $idevenement;
+
+        return $this;
     }
 
     /**
-     * @return Evenement
+     * Get idevenement
+     *
+     * @return integer
      */
     public function getIdevenement()
     {
         return $this->idevenement;
     }
-
-    /**
-     * @param Evenement $idevenement
-     */
-    public function setIdevenement($idevenement)
-    {
-        $this->idevenement = $idevenement;
-    }
-
-
 }
-

@@ -50,6 +50,30 @@ modif_Front:
     path:     /modif_mesPub/{id}
     defaults: { _controller: EvenementBundle:Event:modif}
 
+rat_Event:
+    path:     /evaluer/{id}
+    defaults: { _controller: EvenementBundle:Evaluation:Evaluer}
+
+mesPartici_Event:
+    path:     /mes_Participation
+    defaults: { _controller: EvenementBundle:Participation:mesParticipation}
+
+annuler_Event:
+    path:     /annuler_p/{id}
+    defaults: { _controller: EvenementBundle:Participation:annulerParticipation}
+
+search_Event:
+    path:     /recherche
+    defaults: { _controller: EvenementBundle:Event:search}
+
+index_back:
+    path:     /index_back
+    defaults: { _controller: EvenementBundle:Event:indexBack}
+
+ajout_back:
+    path:     /ajout_back
+    defaults: { _controller: EvenementBundle:Event:Ajout_Back}
+
 
 
 

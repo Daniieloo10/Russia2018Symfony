@@ -6,6 +6,7 @@
  * Time: 18:29
  */
 namespace MyApp\UserBundle\Entity;
+use Symfony\Component\Validator\Constraints as Assert ;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
@@ -32,10 +33,13 @@ use Doctrine\ORM\Mapping as ORM;
      * @ORM\Column(type="string",length=255,nullable=true)
      */
     private $nationalite;
+
     /**
      * @ORM\Column(type="string",length=255,nullable=true)
      */
     private $role;
+
+
     /**
      * @ORM\Column(type="string",length=255,nullable=true)
      */
@@ -54,6 +58,13 @@ use Doctrine\ORM\Mapping as ORM;
     {
         parent::__construct();
     }
+
+
+
+
+
+
+
 
     /**
      * @return mixed
